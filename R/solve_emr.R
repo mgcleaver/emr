@@ -126,6 +126,8 @@ solve_emr <- function(model, maxit = 1000, start = NULL, ...){
                            quiet = TRUE
         )
       }
+      
+      if(sol$message != "Successful convergence") warning(sol$message)
 
       #if(sol$convergence != 0) break
       #cat(name, sol$iter, "\n")
