@@ -181,6 +181,10 @@ solve_emr <- function(model, maxit = 1000, start = NULL, ...){
     params = names(params),
     description = sapply(params, function(x) x$desc)
   )
+    
+  if(sol$message != "Successful convergence") {
+    warning(sol$message)
+    }
 
   return(list(sol = sol,
               params = results$params,
